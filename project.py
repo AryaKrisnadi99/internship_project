@@ -20,7 +20,42 @@ opt = option_menu(
 )
 
 if opt == "Introduction":
-    st.write(" asd ")
+    st.write('''Pada website ini akan membahas bagaimana performa media sosial beberapa perusahaan MICE di indonesia. Untuk 
+             alasan kerahasiaan, nama perusahaan telah diganti namanya dengan menggunakan alpabet A, B & C. 
+             Data yang digunakan diperoleh dari postingan Instagram ketiga perusahaan serta website Social Blade''')
+
+    st.markdown("""
+    <style>
+    .sidebar-text {
+        display: flex;
+        align-items: center;
+    }
+    .sidebar-text img {
+        width: 24px;
+        height: 24px;
+        margin-left: 20px;
+    }
+    """, unsafe_allow_html=True)
+
+    st.markdown("Website ini dibuat oleh :  ")
+    
+    st.markdown('''<div class="sidebar-text"> 1. Agatha Chrisantya PD 
+                <a href="mailto:agathachrisantyadamanik@gmail.com" target="_blank">
+                <img src="https://cdn.worldvectorlogo.com/logos/gmail-icon.svg" alt="Gmail Logo"></a>
+                <a href="https://www.linkedin.com/feed/" target="_blank">
+                <img src="https://cdn.worldvectorlogo.com/logos/linkedin-icon-2.svg" alt="LinkedIn Logo"></a></div>''', unsafe_allow_html=True)
+    
+    st.markdown('''<div class="sidebar-text"> 2. Ahmad Taufiq Nur Rahman
+                <a href="mailto:ataufiqnr799@gmail.com" target="_blank">
+                <img src="https://cdn.worldvectorlogo.com/logos/gmail-icon.svg" alt="Gmail Logo"></a>
+                <a href="https://www.linkedin.com/in/ahmadtaufiqnr/" target="_blank">
+                <img src="https://cdn.worldvectorlogo.com/logos/linkedin-icon-2.svg" alt="LinkedIn Logo"></a></div>''', unsafe_allow_html=True)
+    
+    st.markdown('''<div class="sidebar-text"> 3. I Gede Arya Krisnadi 
+                <a href="mailto:aryakrisnadi96@gmail.com" target="_blank">
+                <img src="https://cdn.worldvectorlogo.com/logos/gmail-icon.svg" alt="Gmail Logo"></a>
+                <a href="https://www.linkedin.com/in/i-gede-arya-krisnadi-886b741a2/" target="_blank">
+                <img src="https://cdn.worldvectorlogo.com/logos/linkedin-icon-2.svg" alt="LinkedIn Logo"></a></div>''', unsafe_allow_html=True)
 
 else:
     df1 = pd.read_excel("data_project.xlsx", "ig_A")
@@ -29,7 +64,7 @@ else:
     df4 = pd.read_excel("data_project.xlsx", "ER_IG")
     df5 = pd.read_excel("data_project.xlsx", "ER_IG2")
 
-    grafik = st.selectbox("", ["Engagement Instagram", "Comments"])
+    grafik = st.selectbox("", ["Engagement Instagram", "Comments","Summary"])
 
     if grafik == "Engagement Instagram":
         st.subheader("Perbandingan Jumlah Post")
@@ -227,7 +262,7 @@ else:
             unsafe_allow_html=True,
         )
         
-    else:
+    elif grafik == "Comments":
         st.subheader("Grafik Perbandingan Jumlah Comment")
         freq = st.radio("Frequency", ["Daily", "Monthly"])
         
@@ -335,3 +370,11 @@ else:
             """,
             unsafe_allow_html=True,
         )
+
+    else :
+        st.write("Berdasarkan hasil analisa diperoleh kesimpulan sebagai berikut : ",'\n',
+                "1. Perusahaan A memiliki jumlah like dan komen tertinggi dibandingkan dengan 2 perusahaan lainnya",'\n'
+                '''2. Untuk kategori yang sama baik di like dan komen, perusahaan A mememiliki jumlah engadmend
+                  yang lebih tinggi dibandingkan perusahaan B & C''','\n'
+                '''3. Walaupun perusahaan A memiliki engagement untuk like dan comment tertinggi namun
+                Perusahaan B memiliki jumlah kenaikan pengikut tertinggi''')
