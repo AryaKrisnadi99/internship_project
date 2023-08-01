@@ -20,6 +20,7 @@ opt = option_menu(
 )
 
 if opt == "Introduction":
+    st.write("asd")
     st.write('''Pada website ini akan membahas bagaimana performa media sosial beberapa perusahaan MICE di indonesia. Untuk 
              alasan kerahasiaan, nama perusahaan telah diganti namanya dengan menggunakan alpabet A, B & C. 
              Data yang digunakan diperoleh dari postingan Instagram ketiga perusahaan serta website Social Blade''')
